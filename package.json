@@ -4,9 +4,11 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"android": "adb reverse tcp:8081 tcp:8081; react-native run-android"
 	},
 	"dependencies": {
+		"exp": "^44.0.0",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.4"
 	},
