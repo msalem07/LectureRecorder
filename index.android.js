@@ -12,12 +12,15 @@ import {
   View
 } from 'react-native';
 import Header from './src/components/Header';
+import FileList from './src/components/FileList';
 
 export default class LectureRecorder extends Component {
   render() {
     return (
-        <Header/>
-
+      <View style={{flex: 1}}>
+        <Header headerText={"Hello"}/>
+        <FileList />
+      </View>
     );
   }
 }
