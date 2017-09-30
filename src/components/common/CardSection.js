@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-export default function FileSection(props){
+export default function CardSection(props){
     return (
         <View style={styles.containerStyle}>
             {props.children}

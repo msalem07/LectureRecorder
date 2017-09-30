@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, Text, View, Linking } from 'react-native';
-import FileCard from './FileCard';
-import FileSection from './FileSection';
-import Button from './Button';
+import Card from './common/Card';
+import CardSection from './common/CardSection';
+import Button from './common/Button';
 
 export default function FileDetail(props){
 
@@ -10,8 +10,8 @@ export default function FileDetail(props){
     const { thumbnailStyle, thumbnailContainerStyle, headerContentStyle, headerTextStyle, imageStyle} = styles;
 
     return (
-        <FileCard>
-            <FileSection>
+        <Card>
+            <CardSection>
                 <View style={thumbnailContainerStyle}>
                     <Image style={thumbnailStyle} source={{uri: thumbnail_image}}/>
                 </View>
@@ -19,19 +19,19 @@ export default function FileDetail(props){
                     <Text style={headerTextStyle}>{title}</Text>
                     <Text style={headerTextStyle}>{artist}</Text>
                 </View>
-            </FileSection>
+            </CardSection>
 
             {/* We won't need the image below for the files, however we can reuse the buttons by modifying the styling of it*/}
-            <FileSection>
+            <CardSection>
                 <Image style={imageStyle} source={{uri: image}} />
-            </FileSection>
+            </CardSection>
 
-            <FileSection>
+            <CardSection>
                 <Button onPress={()=>Linking.openURL(url)}>
                     Buy Now
                 </Button>
-            </FileSection>
-        </FileCard>
+            </CardSection>
+        </Card>
     )
 };
 
