@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-export default function Button(props){
+export function Button(props){
 
     const { onPress, children } = props;
     const { buttonStyle, textStyle } = styles;
