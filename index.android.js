@@ -11,9 +11,12 @@ import {
   Text,
   View
 } from 'react-native';
-import Header from './src/components/Header';
+import App from './src/app';
+
+import Header from './src/components/common/Header';
 import FileList from './src/components/FileList';
 
+//This will be the main component for the file explorer page
 export default class LectureRecorder extends Component {
   render() {
     return (
@@ -44,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('LectureRecorder', () => LectureRecorder);
+AppRegistry.registerComponent('LectureRecorder', () => App);

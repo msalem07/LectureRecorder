@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import App from './src/app';
 
 export default class LectureRecorder extends Component {
   render() {
@@ -50,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('LectureRecorder', () => LectureRecorder);
+AppRegistry.registerComponent('LectureRecorder', () => App);
