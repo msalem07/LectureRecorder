@@ -1,0 +1,19 @@
+==================================
+TextInput
+==================================
+
+Component that takes in User input.
+These components also need have a height and width defined for them to be visible.
+The prop method that responds to changes is actually called onChangeText, where the first argument is the text being inputed on the element.
+Setting the value to the input field is actually the same as the React Input component
+Since the TextInput needs a lot of styling and login you might want to make a common component that you can reuse;
+Instead of types (like tel, email, password) there are specific props to let the component know how to handle the text (secureTextEntry for password)
+
+
+===================================
+Firebase
+===================================
+
+Library that handles login authentication among other things.
+Can be initialized on the componentWillMount Lifecycle with the information found on the firebase console.
+Must activate the types of authentication that you want your app to have on the console, and the npm library has the right calls for each one.
