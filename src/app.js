@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import firebase from 'firebase';
-import { Header, Button, CardSection, Spinner} from './components/common';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
+import { Header, Button, CardSection, Spinner, PopUpList } from './components/common';
 import LoginForm from './components/LoginForm';
 
-
+const store = createStore(reducers);
 
 export default class App extends Component {
 
@@ -40,7 +43,8 @@ export default class App extends Component {
         switch (this.state.loggedIn){
             case true:
                 return (
-                    <View>
+                    <View style={{flex: 1 }}>
+                        <PopUpList/>
                         <CardSection>
                             <Button onPress={()=> firebase.auth().signOut()}>
                                 Logout
@@ -63,9 +67,11 @@ export default class App extends Component {
 
     render() {
         return (
-                <View>
+            <Provider store={store}>
+                <View style={{flex: 1}}>
                     {this.renderContent()}
                 </View>
+            </Provider>
         )
     }
 }
