@@ -13,7 +13,7 @@ export default class LoginForm extends Component {
         const { email, password } = this.state;
 
         this.setState({ error: "", loading: true });
-        setTimeout(()=>{
+
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(() => { this.onLoginSuccess() })
             .catch((error) => {
@@ -21,7 +21,6 @@ export default class LoginForm extends Component {
                     .then(() => this.onLoginSuccess())
                     .catch((error) => this.onLoginFailure())
             });
-        },3000);
     }
 
     onLoginSuccess() {
